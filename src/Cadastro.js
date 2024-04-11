@@ -65,7 +65,7 @@ const css = StyleSheet.create({
     },
     btn:{
         width:"50%",
-        height: 60,
+        height: 50,
         backgroundColor:"#F1CECC",
         borderRadius: 5,
         marginTop: 20,

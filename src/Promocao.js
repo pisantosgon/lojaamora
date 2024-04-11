@@ -39,7 +39,7 @@ const produto = [
 export default function Promocao()
 {
     return(      
-        <View>
+        <View style={css.container}>
              <Image style={css.imagem}  source={require("../assets/promocao-sem-fundo.png")}/> 
             <FlatList
                     data={produto}
@@ -49,8 +49,10 @@ export default function Promocao()
                         justifyContent: "space-between",
                         width: "50%",
                         padding: 10,
-                        gap: 20
+                        gap: 20,
+
                     }}
+                    contentContainerStyle={{ paddingBottom: 200 }}
                     numColumns={2}
                 />
         </View>
@@ -58,12 +60,15 @@ export default function Promocao()
 }
 
 const css = StyleSheet.create({
+    container: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
     imagem:{
         width:230,
         height:230,
-        top:-60,
-        resizeMode:"stretch",
-        marginLeft:85,
+        resizeMode:"contain"
       }   
 })
 
