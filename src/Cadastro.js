@@ -1,8 +1,7 @@
-import React from 'react'
-import { Text, TextInput, TouchableOpacity, View, StyleSheet} from 'react-native'
+import { Text, TextInput, TouchableOpacity, View , StyleSheet,Image} from "react-native";
 
-export default function Cadastro({setLogado,setCadastro}) {
-    
+export default function cadastro({setLogado , setCadastro}){
+
     function Cadastrar(){
         setCadastro(false);
         setLogado(false);
@@ -11,31 +10,66 @@ export default function Cadastro({setLogado,setCadastro}) {
         setCadastro(false);
         setLogado(false);
     }
-  return (
-    <View>
-        <TextInput/>
-        <TextInput/>
-        <TouchableOpacity onPress={Cadastrar}>
-            <Text>Cadastrar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={Voltar}>
-            <Text>Login</Text>
-        </TouchableOpacity>
-    </View>
-  )
+
+    return(
+        <View style={css.container}> 
+            <Image style={css.imagem} source={require("../assets/logo-pincel.png")}/> 
+            <View style={css.conteudo}>
+                <Text>Digite o Nome</Text>
+                    <TextInput style={css.input} /> 
+                <Text>Digite o CPF</Text>
+                    <TextInput style={css.input} />   
+                <Text>Digite o Endereço</Text>
+                    <TextInput style={css.input} /> 
+                <Text>Digite o Telefone</Text>
+                    <TextInput style={css.input} />         
+                <TouchableOpacity onPress={Cadastrar} style={css.btn}>
+                    <Text>Cadastrar</Text>
+                </TouchableOpacity>      
+                <TouchableOpacity onPress={Voltar} style={css.btn}>
+                    <Text>Voltar</Text>
+                </TouchableOpacity>           
+            </View>           
+        </View>
+     );
 }
+
 const css = StyleSheet.create({
-        View:{
-            width:"100%",
-            height:"100%",
-            flex:1,
-            justifyContent:"center",
-            color:"#FFC7E9"
-        },
-        inputs:{
-            width:"90%",
-            borderWidth:1,
-            marginTop:25,
-            color:"#FFC7E9"
-        }
-})
+    container:{
+        width: "100%",      
+        backgroundColor: "white",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center", 
+        flex: 1,
+    },
+    conteudo:{
+        width: "100%",       
+        fontSize: 30,
+        fontWeight: "bold"
+    },
+    input: {
+        width: "80%",
+        height:40,
+        alignSelf: "center",
+        borderWidth: 1,
+        borderRadius: 5,
+        marginTop: 25,
+        top:-3
+    },  
+    imagem:{
+        width:230,
+        height:230,
+        top:10,
+        resizeMode:"stretch",
+    },
+    btn:{
+        width:"50%",
+        height: 60,
+        backgroundColor:"#F1CECC",
+        borderRadius: 5,
+        marginTop: 20,
+        alignSelf: "center",
+        top:3
+    },
+});

@@ -1,50 +1,82 @@
 import React, { useState } from 'react'
-import { Keyboard, TextInput,Text, TouchableOpacity,View,StyleSheet } from 'react-native';
+import { Keyboard, TouchableOpacity, View,TextInput,Text, StyleSheet, Image } from 'react-native'
 
-export default function Login({setLogado,setCadastro}) {
 
-    const[email,setEmail] = useState("");
-    const[senha, setSenha] = useState("");
+export default function Login({setLogado, setCadastro}) {
+    
+    const[email, setEmail] = useState("");
+    const[senha , setSenha] = useState("");
 
     function Login()
     {
         Keyboard.dismiss();
-        if( email =="arrudamariaeduarda492@gmail.com" && senha == "1234"){
+        if(email == "lojaamora" && senha == "lojaamora") {
             setLogado(true);
         }
     }
-    function Cadastrar()
-    {
-        setLogado(true);
+
+    function cadastro(){
         setCadastro(true);
+        setLogado(true);
     }
-  return (
-    <View >
-         <Text css={css.Label}>digite seu email:</Text>
-        <TextInput style={css.input} onChangeText={ (digitado) => setEmail (digitado)} value={email}/>
-        <Text>digite sua senha</Text>
-        <TextInput 
-         style={css.input} onChangeText={ (digitado) => setSenha (digitado)} value={senha}/>
-        <TouchableOpacity onPress={Login}>
-        <Text>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={Cadastrar}>
-        <Text>Cadastra-se</Text>
-        </TouchableOpacity>
+
+    return (
+    <View style={css.container}>
+         <Image style={css.imagem} source={require("../assets/logo-pincel.png")}/> 
+         <View style={css.conteudo}>
+            <Text>Digite o Usuário</Text>
+            <TextInput style={css.input} onChangeText={(digitado) => setEmail(digitado)} value={email} /> 
+            <Text>Digite a Senha</Text>
+            <TextInput style={css.input} onChangeText={(digitado) => setSenha(digitado)} value={senha} />
+            <TouchableOpacity onPress={Login} style={css.btn}>
+                <Text style={css.texto}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={cadastro} style={css.btn}>
+                <Text style={css.texto}>Cadastre-se</Text>
+            </TouchableOpacity>           
+         </View>           
     </View>
   )
 }
 const css = StyleSheet.create({
-    View:{
-        width:"100%",
-        height:"100%",
-        flex:1,
-        justifyContent:"center"
+    container:{
+        width: "100%",      
+        backgroundColor: "white",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center", 
+        flex: 1,
     },
-    input:{
-        width:"90%",
-        borderWidth:1,
-        marginTop:25
-    }
+    conteudo:{
+        width: "100%",       
+        fontSize: 30,
+        fontWeight: "bold"
+    },
+    input: {
+        width: "80%",
+        height:40,
+        alignSelf: "center",
+        borderWidth: 1,
+        marginTop: 10
+    },
+    imagem:{
+        width:230,
+        height:230,
+        top:-60,
+        resizeMode:"stretch",
+      },      
+      btn:{
+        width:"50%",
+        height: 50,
+        backgroundColor:"#F1CECC",
+        borderRadius: 5,
+        marginTop: 20,
+        alignSelf: "center"
+      },
+      texto:{
+        top:-3,
+        alignSelf: "center",
+        marginTop:20,
+      }
+});
 
-})
