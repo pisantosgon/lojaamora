@@ -19,6 +19,9 @@ const css = StyleSheet.create({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",      
+        borderRadius:15,
+        borderWidth:1
+        
     },
     Nome: {
         fontWeight: "bold",

@@ -10,7 +10,7 @@ export default function Login({setLogado, setCadastro}) {
     function Login()
     {
         Keyboard.dismiss();
-        if(email == "pietra@pietra" && senha == "1234") {
+        if(email == "lojaamora" && senha == "lojaamora") {
             setLogado(true);
         }
     }
@@ -74,8 +74,9 @@ const css = StyleSheet.create({
         alignSelf: "center"
       },
       texto:{
+        top:-3,
         alignSelf: "center",
-        marginTop:15,
+        marginTop:20,
       }
 });
 

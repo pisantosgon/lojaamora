@@ -6,7 +6,6 @@ export default function cadastro({setLogado , setCadastro}){
         setCadastro(false);
         setLogado(false);
     }
-
     function Voltar(){
         setCadastro(false);
         setLogado(false);
@@ -55,7 +54,8 @@ const css = StyleSheet.create({
         alignSelf: "center",
         borderWidth: 1,
         borderRadius: 5,
-        marginTop: 25
+        marginTop: 25,
+        top:-3
     },  
     imagem:{
         width:230,
@@ -69,6 +69,7 @@ const css = StyleSheet.create({
         backgroundColor:"#F1CECC",
         borderRadius: 5,
         marginTop: 20,
-        alignSelf: "center"
+        alignSelf: "center",
+        top:3
     },
 });

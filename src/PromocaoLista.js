@@ -18,7 +18,9 @@ const css = StyleSheet.create({
         backgroundColor: "#F1CECC",
         display:"flex",
         justifyContent:"center",
-        alignItems:"center",   
+        alignItems:"center",  
+        borderRadius:15,
+        borderWidth:1 
     },
     Nome: {
         fontWeight: "bold",

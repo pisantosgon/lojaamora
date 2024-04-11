@@ -10,6 +10,7 @@ const produto = [
         cor: "Rosa claro",
         preco: "90.00 ",
         imagem: require("../assets/primer-removebg-preview (1).png")
+        
     },
     {
         id: 8,
@@ -31,6 +32,20 @@ const produto = [
         cor: "Azul",
         preco: "70.00 ",
         imagem: require("../assets/esponginha-bt-removebg-preview.png")
+    },
+    {
+        id: 11,
+        nome: " Paleta de sombra",
+        cor: "red rose",
+        preco: "50.00 ",
+        imagem: require("../assets/paleta-sombra-removebg-preview.png")
+    },
+    {
+        id: 12,
+        nome: " Esponginha bt ",
+        cor: "Azul",
+        preco: "70.00 ",
+        imagem: require("../assets/esponginha-bt-removebg-preview.png")
     }
 ];
 
@@ -42,6 +57,7 @@ export default function Promocao()
         <View style={css.container}>
              <Image style={css.imagem}  source={require("../assets/promocao-sem-fundo.png")}/> 
             <FlatList
+                    style={{ marginBottom: 30 }}
                     data={produto}
                     renderItem={({ item }) => <PromocaoLista nome={item.nome} preco={item.preco} cor={item.cor} imagem={item.imagem} />}
                     keyExtractor={(item) => item.id}
