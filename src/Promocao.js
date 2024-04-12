@@ -35,17 +35,17 @@ const produto = [
     },
     {
         id: 11,
-        nome: " Paleta de sombra",
-        cor: "red rose",
-        preco: "50.00 ",
-        imagem: require("../assets/paleta-sombra-removebg-preview.png")
+        nome: "Fixador de maquiagem bt",
+        cor: "rosa",
+        preco: "45.00 ",
+        imagem: require("../assets/fix-bt.png")
     },
     {
         id: 12,
-        nome: " Esponginha bt ",
-        cor: "Azul",
-        preco: "70.00 ",
-        imagem: require("../assets/esponginha-bt-removebg-preview.png")
+        nome: " mascara de cilios bt ",
+        cor: "Preto",
+        preco: "25.00 ",
+        imagem: require("../assets/mascara-cilios-bt.png")
     }
 ];
 
