@@ -6,11 +6,11 @@ import { TextInput, Text, StyleSheet, View,Image, Button } from 'react-native'
 export default function Carrinho() {
   return (
     <View style={css.caixa}>
-      <View style={css.caixa1}>
+      <View>
       <Text style={css.textopro}>
           produto
         </Text>
-        
+
         <Text style={css.bt}>
         Bt soft blender
         </Text>
@@ -30,6 +30,9 @@ export default function Carrinho() {
         subtotal (sem frete):R$13,99
         </Text>
         <Image style={css.imagem}  source={require("../assets/fotor-2024041294257.png")}/>
+      </View>
+      <View style={css.caixa1}>
+      
       </View>
       <View style={css.caixa2}>
         <Text style={css.envio}>
@@ -82,7 +85,8 @@ const css = StyleSheet.create({
       height: 55,
       resizeMode:"contain",
       marginTop:-91,
-      marginRight:9,
+      marginRight:"50%"
+  
       
       
     },
